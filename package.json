@@ -1,0 +1,18 @@
+{
+  "name": "ai-image-generator",
+  "version": "1.0.0",
+  "description": "sample app to generate an ai image based upon the what user is typing",
+  "main": "index.js",
+  "scripts": {
+    "start":"node index",
+    "dev" : "nodemon index"
+  },
+  "author": "atanu mondal",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "openai": "^3.1.0"
+  }
+}
