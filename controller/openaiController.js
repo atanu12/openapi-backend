@@ -11,17 +11,18 @@ const generateImage = async (req, res) => {
 
     // destructure the data from the boody
     console.log(req.body, 'res body');
-    const {imageType, size} = req.body;
+    const {imageType, size, no} = req.body;
     // set the size
     const imageSize =  size === 'small' ? '256x256' : size === 'medium' ? '512x512' : '1024x1024';
 
     try {
         const response = await openai.createImage({
             prompt:imageType,
-            n:1,
+            n:no,
             size: imageSize
         });
-        const image_Url = response.data.data[0].url;
+        // console.log(response.data.data, 'responsedata');
+        const image_Url = response.data.data;
 
         // send the response
         res.status(200).json({
