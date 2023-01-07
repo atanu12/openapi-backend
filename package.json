@@ -4,15 +4,18 @@
   "description": "sample app to generate an ai image based upon the what user is typing",
   "main": "index.js",
   "scripts": {
-    "start":"node index",
-    "dev" : "nodemon index"
+    "start": "node index",
+    "dev": "nodemon index"
   },
   "author": "atanu mondal",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.1",
     "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
     "express": "^4.18.2",
     "nodemon": "^2.0.20",
-    "openai": "^3.1.0"
+    "openai": "^3.1.0",
+    "path": "^0.12.7"
   }
 }

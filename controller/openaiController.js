@@ -1,4 +1,5 @@
 // importing the openai
+const { json } = require('express');
 const {OpenAIApi, Configuration} = require('openai');
 
 // configuring the secretkey
@@ -11,6 +12,7 @@ const generateImage = async (req, res) => {
 
     // destructure the data from the boody
     console.log(req.body, 'res body');
+    console.log(JSON.parse(req), 'JSONParse');
     const {imageType, size, no} = req.body;
     // set the size
     const imageSize =  size === 'small' ? '256x256' : size === 'medium' ? '512x512' : '1024x1024';
@@ -18,7 +20,7 @@ const generateImage = async (req, res) => {
     try {
         const response = await openai.createImage({
             prompt:imageType,
-            n:no,
+            n:+no,
             size: imageSize
         });
         // console.log(response.data.data, 'responsedata');
